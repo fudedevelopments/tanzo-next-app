@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { APP_NAME, APP_SLOGAN, APP_DESCRIPTION } from "@/lib/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tanzo Gifts | Customized Gift Store",
-  description: "Tanzo Gifts - Your destination for fully customized gifts",
-};
+  title: {
+    template: `%s | ${APP_NAME}`,
+    default: `${APP_NAME}. ${APP_SLOGAN}`,
+  },
+  description: APP_DESCRIPTION,
+}
 
 export default function RootLayout({
   children,
